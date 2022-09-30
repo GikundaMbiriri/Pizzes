@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Henny+Penny&family=Source+Sans+Pro:wght@200;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Farsan&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
