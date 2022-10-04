@@ -7,10 +7,10 @@ import { LatestArticleCard, ArticleCard } from "../components/ArticleCards";
 import Login from "../components/Login";
 import Heading from "../components/Heading";
 import { getArticles } from "../apis/articles";
-import SharingModal from "../utils/modals/SharingModal";
-import { signInWithGoogle } from "../utils/config";
+import SharingModal from "../components/modals/SharingModal";
+
 import { MusicPlayer } from "../components/player/PodcastPlayer";
-import { getAuth, onAuthStateChanged } from "firebase/auth";
+
 import { articlesStore } from "../store/index";
 function Home(props) {
   const { data } = useQuery(["articles"], getArticles, {
@@ -19,15 +19,7 @@ function Home(props) {
   const [articles, setArticles] = useState(data.data);
   const [windowWidth, setWindowWidth] = useState(800);
   const storeArticles = articlesStore((state) => state.setArticles);
-  const auth = getAuth();
 
-  onAuthStateChanged(auth, (user) => {
-    if (user) {
-      console.log(user.accessToken);
-    } else {
-      // No user is signed in.
-    }
-  });
   // useEffect(() => {
   //   console.log(user?.currentUser);
   // }, [user]);
@@ -51,7 +43,7 @@ function Home(props) {
         <title>Pizzes Blog and Podcast page</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
-      <div onClick={signInWithGoogle}>Login</div>
+
       <div className="flex flex-wrap  w-full h-full flex-grow overflow-y-scroll scrollbar-hide">
         <div className="md:h-full h-3/5 md:w-1/2 w-full">
           <div className="md:h-5/6 h-full w-full">

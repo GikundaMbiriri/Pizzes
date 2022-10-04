@@ -27,6 +27,7 @@ function Article({ res }) {
   useEffect(() => {
     storeArticle(article);
     storeComments(comments);
+    console.log("Here:", localStorage.getItem("uId"));
   }, [article, comments]);
   return (
     <>
@@ -37,12 +38,12 @@ function Article({ res }) {
         <div className=" w-screen">
           <ArticleHead image={article?.image[0]} topic={article?.topic} />
           <ArticleBody data={article} />
-          <div className="w-full px-10 grid grid-cols-3 grid-flow-row">
-            <div className=" col-span-2">
+          <div className="w-full px-10 md:grid md:grid-cols-3 md:grid-flow-row">
+            <div className=" md:col-span-2">
               <Comments comments={comments} />
             </div>
 
-            <div className=" col-span-1 ">
+            <div className=" md:col-span-1 ">
               <CommentsForm id={blogId} />
             </div>
           </div>

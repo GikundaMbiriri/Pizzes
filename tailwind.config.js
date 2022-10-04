@@ -16,6 +16,10 @@ module.exports = {
         Farsan: ["Farsan", "cursive"],
         Abel: ["Abel", "sans-serif"],
       },
+      zIndex: {
+        75: 75,
+        100: 100,
+      },
       keyframes: {
         fade: {
           "0%": { opacity: 0 },
@@ -27,6 +31,7 @@ module.exports = {
       },
       colors: {
         "pizzes-pink": "#f3078998",
+        midnight: "#14002A",
       },
     },
   },
