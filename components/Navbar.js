@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { AiFillCaretDown } from "react-icons/ai";
+import logo from "../assets/logo.svg";
 import Link from "next/link";
 function Navbar() {
   const [dropDown, setDropDown] = useState(false);
@@ -9,11 +10,7 @@ function Navbar() {
     <>
       <div className="w-full bg-gradient-to-t  from-[#f3078998] to-[#00000090] shadow-xl px-2 py-4 flex justify-between items-baseline">
         <div className=" w-20 h-20  ">
-          <img
-            src="../assets/vercel.svg"
-            alt=""
-            className=" w-20 h-20 object-cover "
-          />
+          <img src={logo} alt="" className=" w-20 h-20 object-cover " />
         </div>
         <div className="flex  text-white">
           <div className=" px-4 cursor-pointer rounded-full hover:bg-white hover:text-gray-500">

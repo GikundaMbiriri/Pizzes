@@ -26,7 +26,7 @@ import {
   LinkedinShareButton,
   RedditShareButton,
   LineShareButton,
-} from "react-share";
+} from "next-share";
 const SharingModal = ({ setShowShare, url, title }) => {
   const [copyBtnText, setCopyBtnText] = useState("Copy");
   const [showForwardButton, setShowForwardButton] = useState(true);
@@ -91,22 +91,22 @@ const SharingModal = ({ setShowShare, url, title }) => {
               >
                 <BsLink45Deg className=" text-[#A841A3] text-2xl" />
               </div>
-              <WhatsappShareButton url={url}>
+              <WhatsappShareButton url={url} title={`Pizzes article: ${title}`}>
                 <div className=" px-2  cursor-pointer">
                   <AiOutlineWhatsApp className=" text-[#A841A3]  text-2xl" />
                 </div>
               </WhatsappShareButton>
-              <TwitterShareButton url={url}>
+              <TwitterShareButton url={url} title={`Pizzes article: ${title}`}>
                 <div className=" px-2  cursor-pointer">
                   <AiFillTwitterCircle className=" text-[#A841A3] text-2xl" />
                 </div>
               </TwitterShareButton>
-              <FacebookShareButton url={url}>
+              <FacebookShareButton url={url} quote={`Pizzes article: ${title}`}>
                 <div className=" px-2  cursor-pointer">
                   <BsFacebook className=" text-[#A841A3] text-2xl" />
                 </div>
               </FacebookShareButton>
-              <EmailShareButton url={url}>
+              <EmailShareButton url={url} title={`Pizzes article: ${title}`}>
                 <div className=" px-2  cursor-pointer">
                   <AiOutlineMail className=" text-[#A841A3] text-2xl" />
                 </div>

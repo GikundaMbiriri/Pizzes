@@ -12,6 +12,7 @@
     "firebase": "^9.9.4",
     "next": "latest",
     "next-auth": "^4.0.0-beta.7",
+    "next-share": "^0.18.1",
     "react": "18.1.0",
     "react-dom": "18.1.0",
     "react-icons": "^4.4.0",

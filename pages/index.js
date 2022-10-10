@@ -36,11 +36,14 @@ function Home(props) {
   }, []);
   useEffect(() => {
     storeArticles(articles);
+    console.log(articles);
   }, [articles]);
   return (
     <>
       <Head>
+        <link rel="shortcut icon" href="/logo.svg" />
         <title>Pizzes Blog and Podcast page</title>
+        <Head></Head>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
 

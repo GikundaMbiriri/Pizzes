@@ -13,17 +13,22 @@ import { likeArticle } from "../apis/articles";
 import { userStore } from "../store/index";
 import { signInWithGoogle } from "../utils/config";
 import { useRouter } from "next/router";
+
 export const LatestArticleCard = ({
-  article: { body, topic, likeCount, commentCount, image, blogId },
+  article: { body, topic, likeCount, commentCount, image, blogId, likes },
 }) => {
   const [showShare, setShowShare] = useState(false);
   const [likedCount, setLikedCount] = useState(likeCount);
+  const [liked, setLiked] = useState();
   const authUser = userStore((state) => state.user);
   const router = useRouter();
   const url = "https://pizzesv2.netlify.app" + `/article/${blogId}`;
+
   const likingArticle = async () => {
-    const userId = localStorage.getItem("user");
     if (authUser.authenticated) {
+      const userId = localStorage.getItem("user");
+      setLiked(likes.indexOf(userId));
+
       const res = await likeArticle(blogId, { userId: userId });
       setLikedCount(res.data.likeCount);
       console.log(res);
@@ -101,19 +106,33 @@ export const LatestArticleCard = ({
   );
 };
 export const ArticleCard = ({
-  article: { body, topic, likeCount, commentCount, image, blogId },
+  article: { body, topic, likeCount, commentCount, image, blogId, likes },
 }) => {
   const [showShare, setShowShare] = useState(false);
   const [likedCount, setLikedCount] = useState(likeCount);
+  const [liked, setLiked] = useState();
   const authUser = userStore((state) => state.user);
   const router = useRouter();
   const url = "https://pizzesv2.netlify.app" + `/article/${blogId}`;
+  useEffect(() => {
+    console.log(likes.indexOf(authUser.id));
+    if (likes.indexOf(authUser.id) == -1) {
+      setLiked(false);
+    } else {
+      setLiked(true);
+    }
+  }, []);
   const likingArticle = async () => {
-    const userId = localStorage.getItem("user");
     if (authUser.authenticated) {
+      const userId = localStorage.getItem("user");
+      if (liked) {
+        setLiked(!liked);
+        setLikedCount(likedCount - 1);
+      } else {
+        setLiked(!liked);
+        setLikedCount(likedCount + 1);
+      }
       const res = await likeArticle(blogId, { userId: userId });
-      setLikedCount(res.data.likeCount);
-      console.log(res);
     } else {
       signInWithGoogle();
     }
@@ -121,6 +140,7 @@ export const ArticleCard = ({
   return (
     <>
       <div className="md:w-72 w-full p-2 h-min  md:px-4 md:mx-0 mx-auto py-2 my-4 shadow-xl">
+        {console.log(liked)}
         <Link href={`/article/${blogId}`}>
           <div className=" md:w-64 w-full md:h-40 h-48 relative">
             <Image
@@ -142,7 +162,9 @@ export const ArticleCard = ({
           <div className="flex justify-between pt-2 items-center">
             <div className="flex space-x-2 items-center">
               <div className="" onClick={likingArticle}>
-                <AiFillHeart className=" text-[#A841A3] text-2xl" />
+                {(liked && (
+                  <AiFillHeart className=" text-[#A841A3] text-2xl" />
+                )) || <AiOutlineHeart className=" text-[#A841A3] text-2xl" />}
               </div>
               <div className="">{likedCount}</div>
             </div>

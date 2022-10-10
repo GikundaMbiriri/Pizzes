@@ -1,15 +1,19 @@
 import React, { useState } from "react";
+import logo from "../assets/logo.svg";
 import Link from "next/link";
+import Image from "next/image";
 function MobileNavbar() {
   const [navOpen, setNavOpen] = useState(false);
   return (
     <div className="w-full relative">
       <div className="w-full  bg-gradient-to-t  from-[#f3078998] to-[#000000e8] shadow-xl px-4 py-4 flex justify-between items-center">
-        <div className=" w-14 h-14  ">
-          <img
-            src="../assets/vercel.svg"
-            alt=""
-            className=" w-14 h-14 object-cover "
+        <div className=" w-14 h-14 block ">
+          <Image
+            src="/logo.svg"
+            className=" "
+            height={200}
+            width={200}
+            layout="intrinsic"
           />
         </div>
         <div
