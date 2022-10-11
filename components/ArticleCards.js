@@ -115,13 +115,14 @@ export const ArticleCard = ({
   const router = useRouter();
   const url = "https://pizzesv2.netlify.app" + `/article/${blogId}`;
   useEffect(() => {
-    console.log(likes.indexOf(authUser.id));
-    if (likes.indexOf(authUser.id) == -1) {
-      setLiked(false);
-    } else {
-      setLiked(true);
+    if (authUser.id && likes) {
+      if (likes.indexOf(authUser.id) == -1) {
+        setLiked(false);
+      } else {
+        setLiked(true);
+      }
     }
-  }, []);
+  }, [authUser]);
   const likingArticle = async () => {
     if (authUser.authenticated) {
       const userId = localStorage.getItem("user");
@@ -140,7 +141,6 @@ export const ArticleCard = ({
   return (
     <>
       <div className="md:w-72 w-full p-2 h-min  md:px-4 md:mx-0 mx-auto py-2 my-4 shadow-xl">
-        {console.log(liked)}
         <Link href={`/article/${blogId}`}>
           <div className=" md:w-64 w-full md:h-40 h-48 relative">
             <Image

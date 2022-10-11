@@ -31,7 +31,7 @@ function CommentsForm({ id }) {
     }
   };
   return (
-    <div className="px-10 mb-10">
+    <div className="md:px-10 px-4 mb-10">
       <div className="text-pizzes-pink">Leave a Comment</div>
       <div class="mb-3">
         <label for="success" class="block mb-2 text-sm font-medium  ">
