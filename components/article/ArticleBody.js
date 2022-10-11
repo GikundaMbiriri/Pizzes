@@ -7,6 +7,7 @@ import { FiShare } from "react-icons/fi";
 import SharingModal from "../modals/SharingModal";
 import { userStore } from "../../store/index";
 import { likeArticle } from "../../apis/articles";
+import { signInWithGoogle } from "../../utils/config";
 function ArticleBody({ data }) {
   const articles = articlesStore((state) => state.articles);
   console.log("Global articles ", data);
