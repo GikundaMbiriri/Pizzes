@@ -66,7 +66,7 @@ export const MusicPlayer = () => {
 
   const [duration, setDuration] = useState(0);
   const [currentTime, setCurrentTime] = useState(0);
-  const [volume, setVolume] = useState(0.1);
+  const [volume, setVolume] = useState(0.9);
   const [volumePercentage, setVolumePercentage] = useState(10);
 
   const audioRef = useRef();

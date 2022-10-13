@@ -29,6 +29,7 @@ function ArticleBody({ data }) {
   const likingArticle = async () => {
     if (authUser.authenticated) {
       const userId = localStorage.getItem("user");
+      console.log(userId);
       if (liked) {
         setLiked(!liked);
         setLikedCount(likedCount - 1);

@@ -31,3 +31,14 @@ export const postComment = (commentData, podcastId) => {
     return error;
   }
 };
+export const likePodcast = (podcastId, userId) => {
+  try {
+    const response = axios.post(
+      `https://us-central1-pizzes-2f536.cloudfunctions.net/api/like/podcast/${podcastId}`,
+      userId
+    );
+    return response;
+  } catch (error) {
+    return error;
+  }
+};

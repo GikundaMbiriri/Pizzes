@@ -7,6 +7,7 @@ import { AppProps } from "next/app";
 import { Hydrate, QueryClient, QueryClientProvider } from "react-query";
 import Navbar from "../components/Navbar";
 import MobileNavbar from "../components/MobileNavbar";
+import { MusicPlayer } from "../components/player/PodcastPlayer";
 import { userStore } from "../store/index";
 function MyApp({ Component, pageProps: { ...pageProps } }) {
   const [queryClient] = useState(() => new QueryClient());
@@ -56,6 +57,9 @@ function MyApp({ Component, pageProps: { ...pageProps } }) {
             {(windowWidth > 600 && <Navbar />) || <MobileNavbar />}
           </div>
           <Component {...pageProps} />
+          <div className="fixed bottom-0 left-0 right-0 bg-white text-black">
+            <MusicPlayer />
+          </div>
         </div>
       </Hydrate>
     </QueryClientProvider>
