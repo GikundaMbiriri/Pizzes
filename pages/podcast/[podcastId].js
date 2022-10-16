@@ -147,6 +147,7 @@ function Podcast({ res }) {
         <SharingModal
           url={url}
           title={podcast?.name}
+          pic={podcast?.image}
           setShowShare={setShowShare}
         />
       )}

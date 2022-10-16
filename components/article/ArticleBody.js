@@ -75,6 +75,7 @@ function ArticleBody({ data }) {
       {showShare && (
         <SharingModal
           url={url}
+          pic={data.image[0]}
           title={data.topic}
           setShowShare={setShowShare}
         />

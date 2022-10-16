@@ -27,13 +27,13 @@ function Navbar() {
             className=" px-4 mr-20 flex relative items-center  cursor-pointer rounded-full hover:bg-white hover:text-gray-500"
             onClick={() => setDropDown(!dropDown)}
           >
-            <div className="pr-1">About Us</div>
+            <Link href={"/about"}> About Pizzes</Link>
             <AiFillCaretDown className=" text-lg " />
 
             {dropDown && (
               <div className="absolute top-11 left-10 p-2 w-max bg-[#a841a3] rounded-lg">
                 <div className=" p-2 border-b text-sm text-white rounded-full hover:bg-white  hover:text-gray-500 ">
-                  About Pizzes
+                  <Link href={"/about"}> About Pizzes</Link>
                 </div>
                 <div className=" p-2 mt-2 border-b text-sm text-white rounded-full hover:bg-white  hover:text-gray-500">
                   About Blogger

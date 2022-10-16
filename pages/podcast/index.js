@@ -18,6 +18,7 @@ function Podcast(props) {
   console.log(podcasts);
   return (
     <>
+      <Head>Pizzes Podcast</Head>
       <div className=" flex flex-col w-full  relative bg-black text-white">
         <div className=" flex flex-wrap flex-grow w-full h-full    py-5">
           <div className="md:w-2/5 w-full  ">
@@ -56,8 +57,6 @@ function Podcast(props) {
             <PodcastCard podcast={podcast} />
           ))}
         </div>
-
-       
       </div>
     </>
   );

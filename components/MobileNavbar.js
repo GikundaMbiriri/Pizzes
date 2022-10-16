@@ -67,7 +67,7 @@ function MobileNavbar() {
             className="text-white my-2 uppercase text-xl p-2"
             onClick={() => setNavOpen(false)}
           >
-            About Us
+            <Link href={"/about"}> About Pizzes</Link>
           </div>
           <div
             className="text-white my-2  uppercase text-xl p-2"

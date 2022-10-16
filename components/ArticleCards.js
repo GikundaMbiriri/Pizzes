@@ -22,16 +22,28 @@ export const LatestArticleCard = ({
   const [liked, setLiked] = useState();
   const authUser = userStore((state) => state.user);
   const router = useRouter();
-  const url = "https://pizzesv2.netlify.app" + `/article/${blogId}`;
+  const url = "https://pizzes.co.ke" + `/article/${blogId}`;
 
+  useEffect(() => {
+    if (authUser.id && likes) {
+      if (likes.indexOf(authUser.id) == -1) {
+        setLiked(false);
+      } else {
+        setLiked(true);
+      }
+    }
+  }, [authUser]);
   const likingArticle = async () => {
     if (authUser.authenticated) {
       const userId = localStorage.getItem("user");
-      setLiked(likes.indexOf(userId));
-
+      if (liked) {
+        setLiked(!liked);
+        setLikedCount(likedCount - 1);
+      } else {
+        setLiked(!liked);
+        setLikedCount(likedCount + 1);
+      }
       const res = await likeArticle(blogId, { userId: userId });
-      setLikedCount(res.data.likeCount);
-      console.log(res);
     } else {
       signInWithGoogle();
     }
@@ -79,8 +91,12 @@ export const LatestArticleCard = ({
           />
           <div className="flex justify-between pt-2 items-center">
             <div className="flex space-x-2 items-center">
-              <AiFillHeart className=" text-[#A841A3] text-2xl" />
-              <div className="">{likeCount}</div>
+              <div className="" onClick={likingArticle}>
+                {(liked && (
+                  <AiFillHeart className=" text-[#A841A3] text-2xl" />
+                )) || <AiOutlineHeart className=" text-[#A841A3] text-2xl" />}
+              </div>
+              <div className="">{likedCount}</div>
             </div>
             <div className="flex space-x-2 items-center">
               <BiCommentDetail className=" text-[#A841A3] text-2xl" />
@@ -97,7 +113,8 @@ export const LatestArticleCard = ({
       </div>
       {showShare && (
         <SharingModal
-          url={"https:jtjr.com"}
+          url={url}
+          pic={image[0]}
           title={topic}
           setShowShare={setShowShare}
         />
@@ -113,7 +130,7 @@ export const ArticleCard = ({
   const [liked, setLiked] = useState();
   const authUser = userStore((state) => state.user);
   const router = useRouter();
-  const url = "https://pizzesv2.netlify.app" + `/article/${blogId}`;
+  const url = "https://pizzes.co.ke" + `/article/${blogId}`;
   useEffect(() => {
     if (authUser.id && likes) {
       if (likes.indexOf(authUser.id) == -1) {
@@ -183,7 +200,12 @@ export const ArticleCard = ({
       </div>
 
       {showShare && (
-        <SharingModal url={url} title={topic} setShowShare={setShowShare} />
+        <SharingModal
+          pic={image[0]}
+          url={url}
+          title={topic}
+          setShowShare={setShowShare}
+        />
       )}
     </>
   );

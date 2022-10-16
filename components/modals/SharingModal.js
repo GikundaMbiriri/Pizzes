@@ -27,7 +27,7 @@ import {
   RedditShareButton,
   LineShareButton,
 } from "next-share";
-const SharingModal = ({ setShowShare, url, title }) => {
+const SharingModal = ({ setShowShare, url, title, pic }) => {
   const [copyBtnText, setCopyBtnText] = useState("Copy");
   const [showForwardButton, setShowForwardButton] = useState(true);
   const lastElement = useRef();
@@ -73,7 +73,7 @@ const SharingModal = ({ setShowShare, url, title }) => {
             </div>
             <div className="px-4 flex items-baseline">
               <Image
-                src={home2}
+                src={pic ? pic : home2}
                 className=" rounded-lg"
                 height={70}
                 width={70}
