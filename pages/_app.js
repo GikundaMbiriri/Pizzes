@@ -53,18 +53,13 @@ function MyApp({ Component, pageProps: { ...pageProps } }) {
     };
   }, []);
   useEffect(() => {
-    TagManager.initialize({ gtmId: "GTM-XXXXX" });
+    TagManager.initialize({ gtmId: "GTM-PK6BDFR" });
   }, []);
 
   return (
     <QueryClientProvider client={queryClient}>
       <Hydrate state={pageProps.dehydratedState}>
-        <Head>
-          <Script
-            async
-            src="https://www.googletagmanager.com/gtag/js?id=G-M1HTM3LVH4"
-          ></Script>
-        </Head>
+        <Head></Head>
         <div className="  w-screen h-screen flex flex-col overflow-y-scroll scrollbar-hide relative ">
           <div className=" h-30">
             {(windowWidth > 600 && <Navbar />) || <MobileNavbar />}
