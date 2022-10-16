@@ -10,7 +10,7 @@ import { getArticles } from "../apis/articles";
 import SharingModal from "../components/modals/SharingModal";
 
 import { MusicPlayer } from "../components/player/PodcastPlayer";
-
+import Script from "next/script";
 import { articlesStore } from "../store/index";
 function Home(props) {
   const { data } = useQuery(["articles"], getArticles, {
@@ -45,6 +45,10 @@ function Home(props) {
         <title>Pizzes Blog and Podcast page</title>
         <Head></Head>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta
+          name="google-site-verification"
+          content="e90k6ojD2sEVpNmVp3Y4nJZANSW7yrlcAt8X7S_2JnI"
+        />
       </Head>
 
       <div className="flex flex-wrap  w-full h-full flex-grow overflow-y-scroll scrollbar-hide">
