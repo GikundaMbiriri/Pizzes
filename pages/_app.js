@@ -11,6 +11,7 @@ import { MusicPlayer } from "../components/player/PodcastPlayer";
 import { userStore } from "../store/index";
 import Head from "next/head";
 import Script from "next/script";
+import TagManager from "react-gtm-module";
 function MyApp({ Component, pageProps: { ...pageProps } }) {
   const [queryClient] = useState(() => new QueryClient());
   const [windowWidth, setWindowWidth] = useState(800);
@@ -51,6 +52,10 @@ function MyApp({ Component, pageProps: { ...pageProps } }) {
       window.removeEventListener("resize", handleWindowResize);
     };
   }, []);
+  useEffect(() => {
+    TagManager.initialize({ gtmId: "GTM-XXXXX" });
+  }, []);
+
   return (
     <QueryClientProvider client={queryClient}>
       <Hydrate state={pageProps.dehydratedState}>
