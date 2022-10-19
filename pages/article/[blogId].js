@@ -9,6 +9,7 @@ import { getArticle, getArticles } from "../../apis/articles";
 import { useQuery } from "react-query";
 import { articleStore } from "../../store/index";
 import { MusicPlayer } from "../../components/player/PodcastPlayer";
+import { NextSeo } from "next-seo";
 function Article({ res }) {
   const router = useRouter();
   const { blogId } = router.query;
@@ -31,6 +32,31 @@ function Article({ res }) {
   }, [article, comments]);
   return (
     <>
+      <NextSeo
+        title={article?.topic}
+        description="This is a pizzes blog and podcast creation."
+        canonical={`https://pizzes.co.ke/article/${article?.blogId}`}
+        openGraph={{
+          url: `https://pizzes.co.ke/article/${article?.blogId}`,
+          title: article?.topic,
+          description: "This is a pizzes blog and podcast creation.",
+          images: [
+            {
+              url: article?.image[0],
+              width: 800,
+              height: 600,
+              alt: "Blog image",
+              type: "image/jpeg",
+            },
+          ],
+          site_name: "Pizzes Blog and Podcast",
+        }}
+        twitter={{
+          handle: "@MissKanyasya",
+          site: "@MissKanyasya",
+          cardType: "summary_large_image",
+        }}
+      />
       <div>
         <Head>
           <title>{article?.topic}</title>

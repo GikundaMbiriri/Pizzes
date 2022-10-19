@@ -34,7 +34,7 @@ function CommentsForm({ id }) {
     <div className="md:px-10 px-4 mb-10">
       <div className="text-pizzes-pink">Leave a Comment</div>
       <div class="mb-3">
-        <label for="success" class="block mb-2 text-sm font-medium  ">
+        <label for="success" className="block mb-2 text-sm font-medium  ">
           Name
         </label>
         <input
@@ -42,31 +42,31 @@ function CommentsForm({ id }) {
           name="name"
           value={name}
           onChange={handleChange}
-          class="bg-gray-200 border   text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-gray-500 "
+          className="bg-gray-200 border   text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-gray-500 "
           placeholder="Your Name"
         />
-        {/* <p class="mt-2 text-sm text-green-600 dark:text-green-500">
-          <span class="font-medium">Well done!</span> Some success messsage.
+        {/* <p className="mt-2 text-sm text-green-600 dark:text-green-500">
+          <span className="font-medium">Well done!</span> Some success messsage.
         </p> */}
       </div>
-      <div class="mb-3">
-        <label for="success" class="block mb-2 text-sm font-medium  ">
+      <div className="mb-3">
+        <label for="success" className="block mb-2 text-sm font-medium  ">
           Email
         </label>
         <input
           type="email"
           name="email"
           value={email}
-          class="bg-gray-200 border   text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-gray-500 "
+          className="bg-gray-200 border   text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-gray-500 "
           onChange={handleChange}
           placeholder="Your Email"
         />
-        {/* <p class="mt-2 text-sm text-green-600 dark:text-green-500">
-          <span class="font-medium">Well done!</span> Some success messsage.
+        {/* <p className="mt-2 text-sm text-green-600 dark:text-green-500">
+          <span className="font-medium">Well done!</span> Some success messsage.
         </p> */}
       </div>
-      <div class="mb-3">
-        <label for="success" class="block mb-2 text-sm font-medium  ">
+      <div className="mb-3">
+        <label for="success" className="block mb-2 text-sm font-medium  ">
           Comment
         </label>
         <textarea
@@ -75,7 +75,7 @@ function CommentsForm({ id }) {
           name="message"
           value={message}
           onChange={handleChange}
-          class="bg-gray-200 border   text-sm rounded-lg  block w-full p-2.5 dark:bg-gray-500 "
+          className="bg-gray-200 border   text-sm rounded-lg  block w-full p-2.5 dark:bg-gray-500 "
           placeholder="Comment"
         />
         {/* <p class="mt-2 text-sm text-green-600 dark:text-green-500">
