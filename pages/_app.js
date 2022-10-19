@@ -8,13 +8,21 @@ import { Hydrate, QueryClient, QueryClientProvider } from "react-query";
 import Navbar from "../components/Navbar";
 import MobileNavbar from "../components/MobileNavbar";
 import { MusicPlayer } from "../components/player/PodcastPlayer";
+import Footer from "../components/nav/Footer";
 import { userStore } from "../store/index";
 import Head from "next/head";
+import {
+  BrowserView,
+  MobileView,
+  isBrowser,
+  isMobile,
+} from "react-device-detect";
 import Script from "next/script";
 import TagManager from "react-gtm-module";
 function MyApp({ Component, pageProps: { ...pageProps } }) {
   const [queryClient] = useState(() => new QueryClient());
   const [windowWidth, setWindowWidth] = useState(800);
+  const [mobile, setMobile] = useState(false);
   const storeUser = userStore((state) => state.setUser);
   const authUser = userStore((state) => state.user);
   initializeApp({
@@ -55,7 +63,9 @@ function MyApp({ Component, pageProps: { ...pageProps } }) {
   useEffect(() => {
     TagManager.initialize({ gtmId: "GTM-PK6BDFR" });
   }, []);
-
+  useEffect(() => {
+    setMobile(isMobile);
+  }, [isMobile, isBrowser]);
   return (
     <QueryClientProvider client={queryClient}>
       <Hydrate state={pageProps.dehydratedState}>
@@ -65,9 +75,20 @@ function MyApp({ Component, pageProps: { ...pageProps } }) {
             {(windowWidth > 600 && <Navbar />) || <MobileNavbar />}
           </div>
           <Component {...pageProps} />
-          <div className="fixed bottom-0 left-0 right-0 bg-white text-black">
-            <MusicPlayer />
-          </div>
+
+          {!mobile && (
+            <div className="fixed bottom-0 left-0 right-0 bg-white text-black">
+              <MusicPlayer />
+            </div>
+          )}
+
+          {mobile && (
+            <div className="fixed bottom-0 left-0 right-0 bg-white text-black">
+              <MusicPlayer />
+
+              <Footer />
+            </div>
+          )}
         </div>
       </Hydrate>
     </QueryClientProvider>
