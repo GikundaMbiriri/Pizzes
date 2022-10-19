@@ -28,7 +28,7 @@ function Footer() {
           <div className="">
             <AiFillHome className=" text-xl" />
           </div>
-          <div className="">Home</div>
+          <div className=" text-sm">Home</div>
         </div>
       </Link>
       <Link href={"/podcast"}>
@@ -36,7 +36,7 @@ function Footer() {
           <div className="">
             <FaPodcast className=" text-xl" />
           </div>
-          <div className="">Podcast</div>
+          <div className="text-sm">Podcast</div>
         </div>
       </Link>
       <Link href={"/about"}>
@@ -44,7 +44,7 @@ function Footer() {
           <div className="">
             <MdReadMore className="text-2xl" />
           </div>
-          <div className="">About</div>
+          <div className="text-sm">About</div>
         </div>
       </Link>
     </div>
