@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import Image from "next/image";
+import { NextSeo } from "next-seo";
 import {
   AiOutlineShareAlt,
   AiFillPlayCircle,
@@ -40,7 +41,7 @@ function Podcast({ res }) {
     storePodcast(podcast);
     storeComments(comments);
     setLikedCount(podcast?.likeCount);
-    setUrl("https://pizzesv2.netlify.app" + `/article/${podcast?.podcastId}`);
+    setUrl("https://pizzes.co.ke" + `/podcast/${podcast?.podcastId}`);
   }, [podcast, comments]);
 
   useEffect(() => {
@@ -70,7 +71,31 @@ function Podcast({ res }) {
   };
   return (
     <>
-      {console.log(podcast)}
+      <NextSeo
+        title={podcast?.name}
+        description="This is a pizzes blog and podcast creation."
+        canonical={`https://pizzes.co.ke/podcast/${podcast?.podcastId}`}
+        openGraph={{
+          url: `https://pizzes.co.ke/podcast/${podcast?.podcastId}`,
+          title: podcast?.name,
+          description: "This is a pizzes blog and podcast creation.",
+          images: [
+            {
+              url: podcast?.image,
+              width: 800,
+              height: 600,
+              alt: "Blog image",
+              type: "image/jpeg",
+            },
+          ],
+          site_name: "Pizzes Blog and Podcast",
+        }}
+        twitter={{
+          handle: "@MissKanyasya",
+          site: "@MissKanyasya",
+          cardType: "summary_large_image",
+        }}
+      />
       <div className="w-full bg-gradient-to-tr from-[#301934] to-[#2E4052]  text-white">
         <div className="flex flex-wrap w-full md:pt-10 pt-4 md:px-24 px-4   pb-10 items-end  shadow-sm ">
           <div className="md:w-1/5 w-full  ">

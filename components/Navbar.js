@@ -17,7 +17,7 @@ function Navbar() {
             <Link href={"/"}> Home</Link>
           </div>
           <div className="px-4 cursor-pointer rounded-full hover:bg-white hover:text-gray-500">
-            Podcast
+            <Link href={"/podcast"}> Podcast</Link>
           </div>
           <div className="px-4 cursor-pointer rounded-full hover:bg-white hover:text-gray-500">
             Contact

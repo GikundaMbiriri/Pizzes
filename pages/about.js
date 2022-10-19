@@ -1,9 +1,37 @@
 import React from "react";
+import { NextSeo } from "next-seo";
 import Head from "next/head";
+import home2 from "../assets/home2.jpeg";
 import { BiCheckCircle } from "react-icons/bi";
+
 function About() {
   return (
     <>
+      <NextSeo
+        title={"About Pizzes Blog and Podcast"}
+        description="This is a pizzes blog and podcast creation."
+        canonical="https://pizzes.co.ke/about"
+        openGraph={{
+          url: "https://pizzes.co.ke/about",
+          title: "About Pizzes Blog and Podcast",
+          description: "This is a pizzes blog and podcast creation.",
+          images: [
+            {
+              url: home2,
+              width: 800,
+              height: 600,
+              alt: "Pizzes",
+              type: "image/jpeg",
+            },
+          ],
+          site_name: "Pizzes Blog and Podcast",
+        }}
+        twitter={{
+          handle: "@MissKanyasya",
+          site: "@MissKanyasya",
+          cardType: "summary_large_image",
+        }}
+      />
       <Head>About Pizzes</Head>
       <div className=" w-11/12 mx-auto pb-20">
         <div className=" pt-4 font-black text-xl">ABOUT PIZZES</div>

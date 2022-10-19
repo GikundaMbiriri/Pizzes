@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { NextSeo } from "next-seo";
 import Head from "next/head";
 import { useQuery } from "react-query";
 import MainBanner from "../components/MainBanner";
@@ -8,7 +9,7 @@ import Login from "../components/Login";
 import Heading from "../components/Heading";
 import { getArticles } from "../apis/articles";
 import SharingModal from "../components/modals/SharingModal";
-
+import home2 from "../assets/home2.jpeg";
 import { MusicPlayer } from "../components/player/PodcastPlayer";
 import Script from "next/script";
 import { articlesStore } from "../store/index";
@@ -40,6 +41,31 @@ function Home(props) {
   }, [articles]);
   return (
     <>
+      <NextSeo
+        title={"Pizzes Blog and Podcast"}
+        description="This is a pizzes blog and podcast creation."
+        canonical="https://pizzes.co.ke/"
+        openGraph={{
+          url: "https://pizzes.co.ke/",
+          title: "Pizzes Blog and Podcast",
+          description: "This is a pizzes blog and podcast creation.",
+          images: [
+            {
+              url: home2,
+              width: 800,
+              height: 600,
+              alt: "Pizzes",
+              type: "image/jpeg",
+            },
+          ],
+          site_name: "Pizzes Blog and Podcast",
+        }}
+        twitter={{
+          handle: "@MissKanyasya",
+          site: "@MissKanyasya",
+          cardType: "summary_large_image",
+        }}
+      />
       <Head>
         <link rel="shortcut icon" href="/logo.svg" />
         <title>Pizzes Blog and Podcast page</title>
