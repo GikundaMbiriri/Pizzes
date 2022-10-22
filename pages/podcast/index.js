@@ -22,7 +22,7 @@ function Podcast(props) {
       <div className=" flex flex-col w-full  relative bg-black text-white">
         <div className=" flex flex-wrap flex-grow w-full h-full    py-5">
           <div className="md:w-2/5 w-full  ">
-            <div className="  w-full h-60 relative  ">
+            <div className="  w-full h-96 relative  ">
               <Image
                 className=" object-top object-cover"
                 layout="fill"
