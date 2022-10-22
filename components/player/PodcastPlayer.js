@@ -191,7 +191,7 @@ export const MusicPlayer = () => {
             {currentlyPlaying?.name}
           </div>
           <div className="text-xs cursor-pointer hover:underline text-gray-600 line-clamp-1">
-            Kanyasya
+            Pizzes
           </div>
         </div>
       </div>

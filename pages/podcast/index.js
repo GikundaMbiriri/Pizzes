@@ -38,16 +38,12 @@ function Podcast(props) {
             <div className=" text-xs text-center py-1">Hosted by</div>
             <div className="text-lg text-center">Grace Kanyasya</div>
             <div className=" ">
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book. It has
-              survived not only five centuries, but also the leap into
-              electronic typesetting, remaining essentially unchanged. It was
-              popularised in the 1960s with the release of Letraset sheets
-              containing Lorem Ipsum passages, and more recently with desktop
-              publishing software like Aldus PageMaker including versions of
-              Lorem Ipsum.
+              Pizzes is an Inspirational and Personal development content page,
+              and platform that is geared towards raising a generation with
+              re-defined thinking patterns and transformed progressive mindsets.
+              More than a website, Pizzes is your place of peace, closure and
+              clarity. A place where truth and knowledge is dispensed, to enable
+              people rise and become the very best version of themselves.
             </div>
             <SubscribeSection />
           </div>
