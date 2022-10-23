@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { AiFillCaretDown } from "react-icons/ai";
-import logo from "../assets/logo.svg";
+import logo from "../../assets/logo.svg";
 import Link from "next/link";
 function Navbar() {
   const [dropDown, setDropDown] = useState(false);

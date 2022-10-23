@@ -1,9 +1,23 @@
-import React, { useState } from "react";
-import logo from "../assets/logo.svg";
+import React, { useState, useEffect } from "react";
+import { useRouter } from "next/router";
 import Link from "next/link";
 import Image from "next/image";
 function MobileNavbar() {
   const [navOpen, setNavOpen] = useState(false);
+  const [navigation, setNavigation] = useState();
+  const router = useRouter();
+
+  useEffect(() => {
+    if (/^\/article\b[\/\w|\d]*/g.test(router.pathname)) {
+      setNavigation("Home");
+    } else if (/^\/podcast\b[\/\w|\d]*/g.test(router.pathname)) {
+      setNavigation("Podcast");
+    } else if (/^\/about\b[\/\w|\d]*/g.test(router.pathname)) {
+      setNavigation("About");
+    } else {
+      setNavigation("Home");
+    }
+  }, [router.pathname]);
   return (
     <div className="w-full relative">
       <div className="w-full  bg-gradient-to-t  from-[#f3078998] to-[#000000e8] shadow-xl px-4 py-4 flex justify-between items-center">
@@ -16,6 +30,7 @@ function MobileNavbar() {
             layout="intrinsic"
           />
         </div>
+        <div className=" text-white text-xl font-semibold">{navigation}</div>
         <div
           className=" w-12 h-10 border-4 rounded-sm flex flex-col justify-evenly border-white"
           onClick={() => setNavOpen(!navOpen)}

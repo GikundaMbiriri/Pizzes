@@ -14,7 +14,7 @@ import Comments from "../../components/podcast/Comments";
 import CommentsForm from "../../components/podcast/CommentsForm";
 import { getPodcasts, getPodcast, likePodcast } from "../../apis/podcasts";
 import { signInWithGoogle } from "../../utils/config";
-import { podcastStore, userStore } from "../../store/index";
+import { podcastStore, userStore, usePlayer } from "../../store/index";
 import SharingModal from "../../components/modals/SharingModal";
 import { useQuery } from "react-query";
 function Podcast({ res }) {
@@ -22,6 +22,8 @@ function Podcast({ res }) {
   const { podcastId } = router.query;
   const storePodcast = podcastStore((state) => state.setPodcast);
   const storeComments = podcastStore((state) => state.setPodcastComments);
+  const isPlaying = usePlayer((state) => state.isPlaying);
+  const setIsPlaying = usePlayer((state) => state.setIsPlaying);
   const { data, isLoading } = useQuery(
     ["podcast", podcastId],
     () => getPodcast(podcastId),
@@ -107,16 +109,18 @@ function Podcast({ res }) {
               />
             </div>
             <div className="flex pt-4 items-center">
-              <div className=" p-2">
-                <AiFillPlayCircle className=" text-2xl" />
+              <div className=" p-2" onClick={() => setIsPlaying(!isPlaying)}>
+                {(isPlaying && <AiFillPauseCircle className=" text-3xl" />) || (
+                  <AiFillPlayCircle className=" text-3xl" />
+                )}
               </div>
               <div className="p-2" onClick={likingPodcast}>
-                {(!liked && <AiOutlineHeart className=" text-2xl" />) || (
-                  <AiFillHeart className=" text-2xl" />
+                {(!liked && <AiOutlineHeart className=" text-3xl" />) || (
+                  <AiFillHeart className=" text-3xl" />
                 )}
               </div>
               <div className="p-2" onClick={() => setShowShare(true)}>
-                <AiOutlineShareAlt className=" text-2xl" />
+                <AiOutlineShareAlt className=" text-3xl" />
               </div>
             </div>
           </div>

@@ -5,12 +5,13 @@ import { getAuth, onAuthStateChanged } from "firebase/auth";
 //import { SessionProvider } from "next-auth/react";
 import { AppProps } from "next/app";
 import { Hydrate, QueryClient, QueryClientProvider } from "react-query";
-import Navbar from "../components/Navbar";
-import MobileNavbar from "../components/MobileNavbar";
+import Navbar from "../components/nav/Navbar";
+import MobileNavbar from "../components/nav/MobileNavbar";
 import { MusicPlayer } from "../components/player/PodcastPlayer";
 import Footer from "../components/nav/Footer";
 import { userStore } from "../store/index";
 import Head from "next/head";
+import { useRouter } from "next/router";
 import {
   BrowserView,
   MobileView,
@@ -66,6 +67,7 @@ function MyApp({ Component, pageProps: { ...pageProps } }) {
   useEffect(() => {
     setMobile(isMobile);
   }, [isMobile, isBrowser]);
+  const router = useRouter();
   return (
     <QueryClientProvider client={queryClient}>
       <Hydrate state={pageProps.dehydratedState}>
@@ -78,13 +80,17 @@ function MyApp({ Component, pageProps: { ...pageProps } }) {
 
           {!mobile && (
             <div className="fixed bottom-0 left-0 right-0 bg-white text-black">
-              <MusicPlayer />
+              {/^\/podcast\b[\/\w|\d]*/g.test(router.pathname) && (
+                <MusicPlayer />
+              )}
             </div>
           )}
 
           {mobile && (
             <div className="fixed bottom-0 left-0 right-0 bg-white text-black">
-              <MusicPlayer />
+              {/^\/podcast\b[\/\w|\d]*/g.test(router.pathname) && (
+                <MusicPlayer />
+              )}
 
               <Footer />
             </div>

@@ -7,17 +7,14 @@ function Heading() {
         Pizzes
       </div>
       <div className=" px-4 leading-relaxed">
-        Pizzes is an Inspirational and Personal development content page, and
-        platform that is geared towards raising a generation with re-defined
-        thinking patterns and transformed progressive mindsets. More than a
-        website, Pizzes is your place of peace, closure and clarity. A place
-        where truth and knowledge is dispensed, to enable people rise and become
-        the very best version of themselves.
+        Pizzes is an inspirational and personal development content platform
+        that is geared towards raising a generation with re-defined thinking
+        patterns and transformed progressive mindsets. More than a website,
+        Pizzes is your place of peace, closure and clarity. A place where truth
+        and knowledge is dispensed, to enable people rise and become the very
+        best version of themselves.
       </div>
-      <div className="w-11/12 mx-auto">
-        <div className=" font-semibold lg:text-center text-[#DA64C6] text-lg">
-          Your place of inner growth and glow:
-        </div>
+      <div className="w-11/12 mx-auto mt-4">
         <div className=" md:flex md:justify-evenly  ">
           <div className="">
             <div className="flex items-center">

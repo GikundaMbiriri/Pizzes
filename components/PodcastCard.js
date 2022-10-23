@@ -8,15 +8,16 @@ import {
   AiOutlineClockCircle,
   AiOutlineShareAlt,
 } from "react-icons/ai";
+import dayjs from "dayjs";
 import { usePlayer } from "../store/index";
 function PodcastCard({ podcast }) {
-  const { podcastId, image, name, description } = podcast;
+  const { podcastId, image, name, description, createdAt } = podcast;
   const isPlaying = usePlayer((state) => state.isPlaying);
   const setIsPlaying = usePlayer((state) => state.setIsPlaying);
   const currentlyPlaying = usePlayer((state) => state.currentlyPlaying);
   const setCurrentlyPlaying = usePlayer((state) => state.setCurrentlyPlaying);
   return (
-    <div className="w-full bg-gray-200 rounded-lg shadow-lg px-4 pt-2 ">
+    <div className="w-full bg-gray-200 rounded-lg shadow-lg px-2 pt-2 ">
       <Link href={`/podcast/${podcastId}`}>
         <div
           className=" w-full h-56 relative "
@@ -37,7 +38,9 @@ function PodcastCard({ podcast }) {
       <div className="flex justify-evenly px-2 pt-2">
         <div className="flex items-center">
           <AiOutlineCalendar className=" font-black" />
-          <div className=" text-xs pl-2">17 September, 2022</div>
+          <div className=" text-xs pl-2">
+            {dayjs(createdAt).format("D MMMM, YYYY")}
+          </div>
         </div>
         <div className="flex items-center">
           <AiOutlineClockCircle className=" font-black" />

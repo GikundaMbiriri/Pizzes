@@ -38,8 +38,8 @@ function Podcast(props) {
             <div className=" text-xs text-center py-1">Hosted by</div>
             <div className="text-lg text-center">Grace Kanyasya</div>
             <div className=" ">
-              Pizzes is an Inspirational and Personal development content page,
-              and platform that is geared towards raising a generation with
+              Pizzes is an inspirational and personal development content
+              platform that is geared towards raising a generation with
               re-defined thinking patterns and transformed progressive mindsets.
               More than a website, Pizzes is your place of peace, closure and
               clarity. A place where truth and knowledge is dispensed, to enable
@@ -48,7 +48,7 @@ function Podcast(props) {
             <SubscribeSection />
           </div>
         </div>
-        <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 md:gap-x-12 gap-x-2 md:gap-y-10 gap-y-5 px-6 pt-20 mb-20 text-black ">
+        <div className=" grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 md:gap-x-12 gap-x-2 md:gap-y-10 gap-y-5 md:px-6 px-2 pt-20 mb-28 text-black ">
           {podcasts.map((podcast) => (
             <PodcastCard podcast={podcast} />
           ))}
