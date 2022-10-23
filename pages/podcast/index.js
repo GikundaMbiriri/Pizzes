@@ -10,6 +10,7 @@ import SubscribeSection from "../../components/SubscribeSection";
 import PodcastCard from "../../components/PodcastCard";
 import { getPodcasts } from "../../apis/podcasts";
 import { useQuery } from "react-query";
+import { NextSeo } from "next-seo";
 function Podcast(props) {
   const { data } = useQuery(["podcasts"], getPodcasts, {
     initialData: props.res,
@@ -18,6 +19,31 @@ function Podcast(props) {
   console.log(podcasts);
   return (
     <>
+      <NextSeo
+        title={"Pizzes Podcast"}
+        description="This is a pizzes blog and podcast creation."
+        canonical={"https://pizzes.co.ke/podcast"}
+        openGraph={{
+          url: "https://pizzes.co.ke/podcast",
+          title: "Pizzes Podcast",
+          description: "This is a pizzes blog and podcast creation.",
+          images: [
+            {
+              url: "/logo.svg",
+              width: 800,
+              height: 600,
+              alt: "Blog image",
+              type: "image/jpeg",
+            },
+          ],
+          site_name: "Pizzes Blog and Podcast",
+        }}
+        twitter={{
+          handle: "@MissKanyasya",
+          site: "@MissKanyasya",
+          cardType: "summary_large_image",
+        }}
+      />
       <Head>Pizzes Podcast</Head>
       <div className=" flex flex-col w-full  relative bg-black text-white">
         <div className=" flex flex-wrap flex-grow w-full h-full    py-5">
