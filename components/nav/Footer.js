@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { AiFillHome } from "react-icons/ai";
 import { FaPodcast } from "react-icons/fa";
-import { MdReadMore } from "react-icons/md";
+import { MdReadMore, MdOutlineContactSupport } from "react-icons/md";
 import { useRouter } from "next/router";
 import Link from "next/link";
 function Footer() {
@@ -15,6 +15,8 @@ function Footer() {
       setNavigation("podcast");
     } else if (/^\/about\b[\/\w|\d]*/g.test(router.pathname)) {
       setNavigation("about");
+    } else if (/^\/contact\b[\/\w|\d]*/g.test(router.pathname)) {
+      setNavigation("contact");
     } else {
       setNavigation("article");
     }
@@ -45,6 +47,14 @@ function Footer() {
             <MdReadMore className="text-2xl" />
           </div>
           <div className="text-sm">About</div>
+        </div>
+      </Link>
+      <Link href={"/contact"}>
+        <div className={navigation == "contact" ? selected : notSelected}>
+          <div className="">
+            <MdOutlineContactSupport className="text-2xl" />
+          </div>
+          <div className="text-sm">Contact</div>
         </div>
       </Link>
     </div>

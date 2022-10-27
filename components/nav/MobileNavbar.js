@@ -30,7 +30,7 @@ function MobileNavbar() {
             layout="intrinsic"
           />
         </div>
-        <div className=" text-white text-xl font-semibold">{navigation}</div>
+        
         <div
           className=" w-12 h-10 border-4 rounded-sm flex flex-col justify-evenly border-white"
           onClick={() => setNavOpen(!navOpen)}
@@ -88,7 +88,7 @@ function MobileNavbar() {
             className="text-white my-2  uppercase text-xl p-2"
             onClick={() => setNavOpen(false)}
           >
-            Contact
+            <Link href={"/contact"}> Contact</Link>
           </div>
         </div>
       </div>

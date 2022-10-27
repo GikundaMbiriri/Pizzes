@@ -10,7 +10,7 @@ function Navbar() {
     <>
       <div className="w-full bg-gradient-to-t  from-[#f3078998] to-[#00000090] shadow-xl px-2 py-4 flex justify-between items-baseline">
         <div className=" w-20 h-20  ">
-          <img src={logo} alt="" className=" w-20 h-20 object-cover " />
+          <img src={"/logo.svg"} alt="" className=" w-20 h-20 object-cover " />
         </div>
         <div className="flex  text-white">
           <div className=" px-4 cursor-pointer rounded-full hover:bg-white hover:text-gray-500">
@@ -19,9 +19,7 @@ function Navbar() {
           <div className="px-4 cursor-pointer rounded-full hover:bg-white hover:text-gray-500">
             <Link href={"/podcast"}> Podcast</Link>
           </div>
-          <div className="px-4 cursor-pointer rounded-full hover:bg-white hover:text-gray-500">
-            Contact
-          </div>
+
           <div
             ref={ref}
             className=" px-4 mr-20 flex relative items-center  cursor-pointer rounded-full hover:bg-white hover:text-gray-500"
@@ -40,6 +38,9 @@ function Navbar() {
                 </div>
               </div>
             )}
+          </div>
+          <div className="px-4 cursor-pointer rounded-full hover:bg-white hover:text-gray-500">
+            <Link href={"/contact"}> Contact</Link>
           </div>
         </div>
       </div>
