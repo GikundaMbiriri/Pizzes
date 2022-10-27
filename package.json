@@ -22,8 +22,8 @@
     "react-icons": "^4.4.0",
     "react-query": "^3.39.1",
     "react-share": "^4.4.0",
-    "react-whatsapp": "^0.2.1",
-    "react-whatsapp-widget": "^2.1.0",
+  
+  
     "tailwind-scrollbar-hide": "^1.1.7",
     "zustand": "^4.1.1"
   },
