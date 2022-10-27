@@ -4,7 +4,7 @@ import ContactSocials from "../components/contact/ContactSocials";
 import CompanyIcon from "../public/logo.svg";
 
 import { FloatingWhatsApp } from "react-floating-whatsapp";
-import "react-whatsapp-widget/dist/index.css";
+
 function contact() {
   return (
     <>
