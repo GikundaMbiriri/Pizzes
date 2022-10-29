@@ -16,7 +16,7 @@ function ArticleBody({ data }) {
   const [liked, setLiked] = useState();
   const authUser = userStore((state) => state.user);
 
-  const url = "https://pizzesv2.netlify.app" + `/article/${data.blogId}`;
+  const url = "https://pizzes.co.ke" + `/article/${data.blogId}`;
   useEffect(() => {
     if (authUser.id && data.likes) {
       if (data.likes.indexOf(authUser.id) == -1) {
@@ -46,7 +46,7 @@ function ArticleBody({ data }) {
     <>
       <div className=" w-full md:px-10 px-5 md:grid md:grid-cols-3 md:grid-flow-row">
         <div className="md:col-span-2">
-          <h2 className=" text-2xl font-bold">{data.topic}</h2>
+          <h2 className=" text-2xl font-bold  font-Newsreader">{data.topic}</h2>
           <div className=" flex space-x-12 pt-2 items-center">
             <div className="">
               <div className="" onClick={likingArticle}>

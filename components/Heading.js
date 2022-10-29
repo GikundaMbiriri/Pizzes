@@ -14,8 +14,8 @@ function Heading() {
         and knowledge is dispensed, to enable people rise and become the very
         best version of themselves.
       </div>
-      <div className="w-11/12 mx-auto mt-4">
-        <div className=" md:flex md:justify-evenly  ">
+      <div className="w-11/12 mt-4">
+        <div className=" md:flex  space-x-4 px-4 ">
           <div className="">
             <div className="flex items-center">
               <div className=" pr-2">

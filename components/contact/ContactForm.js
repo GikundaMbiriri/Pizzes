@@ -19,7 +19,7 @@ function ContactForm() {
   };
   return (
     <div className="">
-      <div className="text-pizzes-pink text-2xl font-semibold">
+      <div className="text-pizzes-pink font-Newsreader text-lg font-semibold">
         Leave us a Message
       </div>
       <div class="mb-3">

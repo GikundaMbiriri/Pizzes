@@ -17,15 +17,15 @@ function PodcastCard({ podcast }) {
   const currentlyPlaying = usePlayer((state) => state.currentlyPlaying);
   const setCurrentlyPlaying = usePlayer((state) => state.setCurrentlyPlaying);
   return (
-    <div className="w-full bg-gray-200 rounded-lg shadow-lg px-2 pt-2 ">
-      <Link href={`/podcast/${podcastId}`}>
-        <div
-          className=" w-full h-56 relative "
-          onClick={() => {
-            setCurrentlyPlaying(podcast);
-            setIsPlaying(true);
-          }}
-        >
+    <Link href={`/podcast/${podcastId}`}>
+      <div
+        className="w-full bg-gray-200 rounded-lg cursor-pointer shadow-lg px-2 pt-2 "
+        onClick={() => {
+          setCurrentlyPlaying(podcast);
+          setIsPlaying(true);
+        }}
+      >
+        <div className=" w-full h-56 relative ">
           <Image
             className="  object-cover rounded-lg   "
             src={image}
@@ -34,25 +34,26 @@ function PodcastCard({ podcast }) {
             blurDataURL={home2}
           />
         </div>
-      </Link>
-      <div className="flex justify-evenly px-2 pt-2">
-        <div className="flex items-center">
-          <AiOutlineCalendar className=" font-black" />
-          <div className=" text-xs pl-2">
-            {dayjs(createdAt).format("D MMMM, YYYY")}
+
+        <div className="flex justify-evenly px-2 pt-2">
+          <div className="flex items-center">
+            <AiOutlineCalendar className=" font-black" />
+            <div className=" text-xs pl-2">
+              {dayjs(createdAt).format("D MMMM, YYYY")}
+            </div>
+          </div>
+          <div className="flex items-center">
+            <AiOutlineClockCircle className=" font-black" />
+            <div className="pl-2 text-xs">15:03</div>
           </div>
         </div>
-        <div className="flex items-center">
-          <AiOutlineClockCircle className=" font-black" />
-          <div className="pl-2 text-xs">15:03</div>
+        <div className="text-xl line-clamp-1 font-semibold  font-Newsreader p-0.5 text-center">
+          {name}
         </div>
-      </div>
-      <div className="text-xl line-clamp-1 font-semibold p-0.5 text-center">
-        {name}
-      </div>
 
-      <div className="p-1 mb-3 line-clamp-2 text-sm">{description}</div>
-    </div>
+        <div className="p-1 mb-3 line-clamp-2 text-sm">{description}</div>
+      </div>
+    </Link>
   );
 }
 

@@ -1,5 +1,5 @@
 import { useRef, useEffect, useState } from "react";
-
+import styles from "./Player.module.css";
 import {
   BiPlay,
   BiPause,
@@ -177,7 +177,7 @@ export const MusicPlayer = () => {
     <div
       className={`${
         currentlyPlaying ? "block" : "hidden"
-      } w-full flex justify-between items-center`}
+      } w-full flex justify-between py-1.5 items-center`}
     >
       <div className="w-full md:w-1/4 flex px-2 gap-x-2">
         <div className="w-12 h-12">
@@ -227,11 +227,11 @@ export const MusicPlayer = () => {
         <div className="w-32 relative flex items-center">
           <div className="absolute w-full h-1 bg-gray-200"></div>
           <div
-            className="absolute h-1 bg-gradient-to-r from-green to-bloow-blue rounded-full"
+            className="absolute h-1 bg-gradient-to-r from-pizzes-pink to-blue-500 rounded-full"
             style={{ width: `${volumePercentage}%` }}
           ></div>
           <div
-            className="absolute w-3 h-3 rounded-full bg-gradient-to-r from-green to-bloow-blue transition-all"
+            className="absolute w-3 h-3 rounded-full bg-gradient-to-r from-pizzes-pink to-blue-500 transition-all"
             style={{ left: `${volumePercentage}%` }}
           ></div>
           <input
@@ -241,7 +241,7 @@ export const MusicPlayer = () => {
             step="0.01"
             min="0"
             max="1"
-            className="range"
+            className={styles.range}
             onChange={onChangeVolume}
           />
         </div>
@@ -292,11 +292,11 @@ function Slider({ percentage = 0, onChange, duration, currentTime }) {
       </div>
       <div className=" relative w-full h-1 bg-gray-200 rounded-full">
         <div
-          className="absolute bg-gradient-to-r from-green to-bloow-blue w-1/2 h-full rounded-full cursor-pointer transition-all"
+          className="absolute bg-gradient-to-r from-pizzes-pink to-blue-500 w-1/2 h-full rounded-full cursor-pointer transition-all"
           style={{ width: `${percentage}%` }}
         ></div>
         <div
-          className="absolute w-3 h-3 rounded-full bg-gradient-to-r from-green to-bloow-blue -top-1 transition-all"
+          className="absolute w-3 h-3 rounded-full bg-gradient-to-r from-pizzes-pink to-blue-500 -top-1 transition-all"
           style={{ left: `${percentage}%` }}
         ></div>
         <div className="absolute w-full -top-1.5">
@@ -305,7 +305,7 @@ function Slider({ percentage = 0, onChange, duration, currentTime }) {
             value={position}
             ref={rangeRef}
             step="0.01"
-            className="range"
+            className={styles.range}
             onChange={onChange}
           />
         </div>

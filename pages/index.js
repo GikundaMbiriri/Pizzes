@@ -19,6 +19,7 @@ function Home(props) {
   });
   const [articles, setArticles] = useState(data.data);
   const [windowWidth, setWindowWidth] = useState(800);
+
   const storeArticles = articlesStore((state) => state.setArticles);
 
   // useEffect(() => {
@@ -51,7 +52,7 @@ function Home(props) {
           description: "This is a pizzes blog and podcast creation.",
           images: [
             {
-              url: home2,
+              url: "./home2.jpeg",
               width: 800,
               height: 600,
               alt: "Pizzes",
@@ -82,25 +83,17 @@ function Home(props) {
           <div className="md:h-5/6 h-full w-full">
             <MainBanner />
           </div>
-          {windowWidth > 600 && <SubscribeSection />}
         </div>
         <div className=" md:h-full md:w-1/2 w-full">
           <Heading />
-          <div className=" w-full  px-4 flex md:justify-between justify-center flex-wrap">
+          <div className=" w-full  px-4 flex md:justify-evenly justify-center flex-wrap">
             <LatestArticleCard article={articles[0]} />
             {articles.slice(1).map((article) => (
               <ArticleCard article={article} />
             ))}
           </div>
-          {windowWidth <= 600 && <SubscribeSection />}
         </div>
       </div>
-      <div className=" absolute bottom-0 right-0">
-        <button className=" font-Abel bg-gradient-to-l from-[#ff92cabf] to-[#9195fbdb] text-white hover:translate-y-0.5 px-5 py-2 rounded-xl transition ease-in-out delay-150">
-          Subscribe
-        </button>
-      </div>
-      <MusicPlayer />
     </>
   );
 }

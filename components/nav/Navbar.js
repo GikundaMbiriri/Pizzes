@@ -12,7 +12,7 @@ function Navbar() {
         <div className=" w-20 h-20  ">
           <img src={"/logo.svg"} alt="" className=" w-20 h-20 object-cover " />
         </div>
-        <div className="flex  text-white">
+        <div className="flex mr-10    text-white">
           <div className=" px-4 cursor-pointer rounded-full hover:bg-white hover:text-gray-500">
             <Link href={"/"}> Home</Link>
           </div>
@@ -22,22 +22,9 @@ function Navbar() {
 
           <div
             ref={ref}
-            className=" px-4 mr-20 flex relative items-center  cursor-pointer rounded-full hover:bg-white hover:text-gray-500"
-            onClick={() => setDropDown(!dropDown)}
+            className=" px-4  flex relative items-center  cursor-pointer rounded-full hover:bg-white hover:text-gray-500"
           >
             <Link href={"/about"}> About Pizzes</Link>
-            <AiFillCaretDown className=" text-lg " />
-
-            {dropDown && (
-              <div className="absolute top-11 left-10 p-2 w-max bg-[#a841a3] rounded-lg">
-                <div className=" p-2 border-b text-sm text-white rounded-full hover:bg-white  hover:text-gray-500 ">
-                  <Link href={"/about"}> About Pizzes</Link>
-                </div>
-                <div className=" p-2 mt-2 border-b text-sm text-white rounded-full hover:bg-white  hover:text-gray-500">
-                  About Blogger
-                </div>
-              </div>
-            )}
           </div>
           <div className="px-4 cursor-pointer rounded-full hover:bg-white hover:text-gray-500">
             <Link href={"/contact"}> Contact</Link>

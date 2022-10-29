@@ -52,7 +52,7 @@ export const LatestArticleCard = ({
     <>
       <div className="md:w-72 w-full h-min  px-4 py-2 my-4 shadow-xl">
         <Link href={`/article/${blogId}`}>
-          <div className=" md:w-64 w-full md:h-40 h-48 relative">
+          <div className=" md:w-64 w-full md:h-40 h-48 cursor-pointer relative">
             <div className="absolute top-0 w-full h-full ">
               <Image
                 className="  object-cover rounded-lg  animate-[fade_ease-in-out_8s_infinite_-6s] "
@@ -84,13 +84,17 @@ export const LatestArticleCard = ({
           </div>
         </Link>
         <div className=" md:w-64 w-full">
-          <div className=" font-bold text-2xl py-1  line-clamp-1 ">{topic}</div>
+          <Link href={`/article/${blogId}`}>
+            <div className=" font-bold font-Newsreader text-2xl py-1  cursor-pointer line-clamp-1 ">
+              {topic}
+            </div>
+          </Link>
           <div
             className=" line-clamp-2 "
             dangerouslySetInnerHTML={{ __html: body }}
           />
           <div className="flex justify-between pt-2 items-center">
-            <div className="flex space-x-2 items-center">
+            <div className="flex space-x-2 cursor-pointer items-center">
               <div className="" onClick={likingArticle}>
                 {(liked && (
                   <AiFillHeart className=" text-[#A841A3] text-2xl" />
@@ -102,7 +106,7 @@ export const LatestArticleCard = ({
               <BiCommentDetail className=" text-[#A841A3] text-2xl" />
               <div className="">{commentCount}</div>
             </div>
-            <div className="flex space-x-2 items-center">
+            <div className="flex space-x-2 cursor-pointer items-center">
               <MdOutlineShare
                 className=" text-[#A841A3] text-2xl"
                 onClick={() => setShowShare(true)}
@@ -159,7 +163,7 @@ export const ArticleCard = ({
     <>
       <div className="md:w-72 w-full p-2 h-min  md:px-4 md:mx-0 mx-auto py-2 my-4 shadow-xl">
         <Link href={`/article/${blogId}`}>
-          <div className=" md:w-64 w-full md:h-40 h-48 relative">
+          <div className=" md:w-64 w-full md:h-40 h-48 cursor-pointer relative">
             <Image
               className="  object-cover rounded-lg   "
               src={image[0]}
@@ -170,14 +174,17 @@ export const ArticleCard = ({
           </div>
         </Link>
         <div className=" md:w-64 w-full">
-          <div className=" font-bold text-2xl py-1  line-clamp-1 ">{topic}</div>
-
+          <Link href={`/article/${blogId}`}>
+            <div className=" font-bold font-Newsreader text-2xl py-1 cursor-pointer  line-clamp-1 ">
+              {topic}
+            </div>
+          </Link>
           <div
             className=" line-clamp-2 "
             dangerouslySetInnerHTML={{ __html: body }}
           />
           <div className="flex justify-between pt-2 items-center">
-            <div className="flex space-x-2 items-center">
+            <div className="flex space-x-2 cursor-pointer items-center">
               <div className="" onClick={likingArticle}>
                 {(liked && (
                   <AiFillHeart className=" text-[#A841A3] text-2xl" />
@@ -191,7 +198,7 @@ export const ArticleCard = ({
             </div>
             <div className="flex space-x-2 items-center">
               <MdOutlineShare
-                className=" text-[#A841A3] text-2xl"
+                className=" text-[#A841A3] cursor-pointer text-2xl"
                 onClick={() => setShowShare(true)}
               />
             </div>

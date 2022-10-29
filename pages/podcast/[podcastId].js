@@ -126,7 +126,9 @@ function Podcast({ res }) {
           </div>
           <div className="md:w-3/5 w-full md:pl-20 ">
             <div className=" text-lg font-semibold">Podcast</div>
-            <div className=" text-xl font-black pb-2">{podcast?.name}</div>
+            <div className=" text-xl font-black pb-2  font-Newsreader">
+              {podcast?.name}
+            </div>
 
             <div className=""></div>
             <div className=" flex"></div>

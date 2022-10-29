@@ -58,7 +58,7 @@ function Podcast(props) {
           </div>
 
           <div className="md:w-3/5 w-full px-10">
-            <div className="text-4xl text-center font-semibold  text-pizzes-pink italic">
+            <div className="text-4xl text-center font-semibold  font-Newsreader  text-pizzes-pink italic">
               Pizzes Podcast
             </div>
             <div className=" text-xs text-center py-1">Hosted by</div>

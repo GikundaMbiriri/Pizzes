@@ -15,6 +15,7 @@ module.exports = {
         Playfair: ["Playfair Display", "serif"],
         Farsan: ["Farsan", "cursive"],
         Abel: ["Abel", "sans-serif"],
+        Newsreader: ["Newsreader", "serif"],
       },
       zIndex: {
         75: 75,

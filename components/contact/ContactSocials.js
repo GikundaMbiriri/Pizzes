@@ -5,15 +5,15 @@ import { BsFacebook, BsWhatsapp } from "react-icons/bs";
 export default function ContactSocials() {
   return (
     <div className="">
-      <div className="  text-pizzes-pink text-2xl font-semibold">
+      <div className="  text-pizzes-pink font-Newsreader text-lg font-semibold">
         Get in Touch:--{`>`}
       </div>
-      <div className=" text-2xl py-1">Contact us</div>
-      <div className=" text-lg">
+      <div className=" text-lg py-1 font-Newsreader">Contact us</div>
+      <div className=" ">
         For any questions about content,service providers or any other
         inquiries,Reach out to us via:
       </div>
-      <div className=" flex space-x-8 items-center pt-10">
+      <div className=" flex space-x-8 items-center pt-4">
         <a href="https://twitter.com/MissKanyasya?s=08">
           <div className=" text-3xl p-2 cursor-pointer">
             <AiFillTwitterCircle className=" text-[#32A4F1]" />
