@@ -5,7 +5,7 @@ import { BsFacebook, BsWhatsapp } from "react-icons/bs";
 export default function ContactSocials() {
   return (
     <div className="">
-      <div className="  text-pizzes-pink font-Newsreader text-lg font-semibold">
+      <div className="  text-black font-Newsreader text-lg font-semibold">
         Get in Touch:--{`>`}
       </div>
       <div className=" text-lg py-1 font-Newsreader">Contact us</div>

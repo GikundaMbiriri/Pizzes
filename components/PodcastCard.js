@@ -1,5 +1,5 @@
 import React from "react";
-import latest3 from "../assets/latest003.jpeg";
+
 import home2 from "../assets/home2.jpeg";
 import Image from "next/image";
 import Link from "next/link";
@@ -51,7 +51,9 @@ function PodcastCard({ podcast }) {
           {name}
         </div>
 
-        <div className="p-1 mb-3 line-clamp-2 text-sm">{description}</div>
+        <div className="p-1 mb-3 line-clamp-2 max-h-14 overflow-y-hidden text-sm">
+          {description}
+        </div>
       </div>
     </Link>
   );

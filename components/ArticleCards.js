@@ -4,7 +4,6 @@ import Link from "next/link";
 import home2 from "../assets/home2.jpeg";
 import latest1 from "../assets/latest001.jpeg";
 import latest2 from "../assets/latest002.jpeg";
-import latest3 from "../assets/latest003.jpeg";
 import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
 import { BiCommentDetail } from "react-icons/bi";
 import { MdOutlineShare } from "react-icons/md";
@@ -90,7 +89,7 @@ export const LatestArticleCard = ({
             </div>
           </Link>
           <div
-            className=" line-clamp-2 "
+            className=" line-clamp-2 max-h-14 overflow-y-hidden"
             dangerouslySetInnerHTML={{ __html: body }}
           />
           <div className="flex justify-between pt-2 items-center">
@@ -180,7 +179,7 @@ export const ArticleCard = ({
             </div>
           </Link>
           <div
-            className=" line-clamp-2 "
+            className=" line-clamp-2 max-h-14 overflow-y-hidden"
             dangerouslySetInnerHTML={{ __html: body }}
           />
           <div className="flex justify-between pt-2 items-center">

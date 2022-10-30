@@ -33,8 +33,8 @@ function contact() {
           cardType: "summary_large_image",
         }}
       />
-      <div className=" md:flex  w-full  pb-20 ">
-        <div className=" md:w-1/2 w-full md:p-10 p-4">
+      <div className=" md:flex  w-full  pb-20 bg-gradient-to-tl from-black to-pizzes-pink  ">
+        <div className=" md:w-1/2 w-full md:p-10 p-4 text-white">
           <ContactSocials />
         </div>
         <div className=" md:w-1/2 w-full md:p-10 p-4">

@@ -4,7 +4,7 @@ import Image from "next/image";
 import home2 from "../../assets/home2.jpeg";
 import latest1 from "../../assets/latest001.jpeg";
 import latest2 from "../../assets/grace.jpeg";
-import latest3 from "../../assets/latest003.jpeg";
+
 import { MusicPlayer } from "../../components/player/PodcastPlayer";
 import SubscribeSection from "../../components/SubscribeSection";
 import PodcastCard from "../../components/PodcastCard";
@@ -46,7 +46,10 @@ function Podcast(props) {
       />
       <Head>Pizzes Podcast</Head>
       <div className=" flex flex-col w-full  relative bg-black text-white">
-        <div className=" flex flex-wrap flex-grow w-full h-full    py-5">
+        <div
+          className=" flex flex-wrap flex-grow w-full h-full items-center
+           py-5"
+        >
           <div className="md:w-2/5 w-full  ">
             <div className="  w-full h-96 relative  ">
               <Image
@@ -74,7 +77,7 @@ function Podcast(props) {
             <SubscribeSection />
           </div>
         </div>
-        <div className=" grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 md:gap-x-12 gap-x-2 md:gap-y-10 gap-y-5 md:px-6 px-4 pt-20 mb-28 text-black ">
+        <div className=" grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 md:gap-x-20 gap-x-2 md:gap-y-10 gap-y-5 md:px-20 px-4 pt-4 md:pt-1 mb-28 text-black ">
           {podcasts.map((podcast) => (
             <PodcastCard podcast={podcast} />
           ))}
