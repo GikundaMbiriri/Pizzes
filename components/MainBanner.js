@@ -10,7 +10,7 @@ function MainBanner() {
     <div className=" w-full h-full relative shadow-lg">
       <div className="absolute top-0 w-full h-full ">
         <Image
-          className="  object-cover animate-[fade_ease-in-out_8s_infinite_-6s] "
+          className="  object-cover  animate-[fade_ease-in-out_8s_infinite_0s] "
           src={reEdit1}
           layout="fill"
         />
@@ -24,7 +24,7 @@ function MainBanner() {
       </div>
       <div className="absolute top-0 w-full h-full ">
         <Image
-          className=" object-cover animate-[fade_ease-in-out_8s_infinite_0s]"
+          className=" object-cover animate-[fade_ease-in-out_8s_infinite_-6s]"
           src={latest2}
           layout="fill"
         />
