@@ -24,14 +24,14 @@ function MainBanner() {
       </div>
       <div className="absolute top-0 w-full h-full ">
         <Image
-          className=" object-cover animate-[fade_ease-in-out_8s_infinite_-2s]"
+          className=" object-cover animate-[fade_ease-in-out_8s_infinite_0s]"
           src={latest2}
           layout="fill"
         />
       </div>
       <div className="absolute top-0 w-full h-full ">
         <Image
-          className=" object-cover animate-[fade_ease-in-out_8s_infinite_0s]"
+          className=" object-cover  animate-[fade_ease-in-out_8s_infinite_-2s]"
           src={reEdit2}
           layout="fill"
         />

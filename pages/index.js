@@ -86,7 +86,7 @@ function Home(props) {
         </div>
         <div className=" md:h-full md:w-1/2 w-full">
           <Heading />
-          <div className=" w-full  px-4 flex md:justify-evenly justify-center flex-wrap">
+          <div className=" w-full pb-20 px-4 flex md:justify-evenly justify-center flex-wrap">
             <LatestArticleCard article={articles[0]} />
             {articles.slice(1).map((article) => (
               <ArticleCard article={article} />
