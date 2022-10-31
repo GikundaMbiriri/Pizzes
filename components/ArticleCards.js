@@ -84,7 +84,7 @@ export const LatestArticleCard = ({
         </Link>
         <div className=" md:w-64 w-full">
           <Link href={`/article/${blogId}`}>
-            <div className=" font-bold font-Newsreader text-2xl py-1  cursor-pointer line-clamp-1 ">
+            <div className=" font-bold  text-2xl  md:text-xl py-1  cursor-pointer line-clamp-1 ">
               {topic}
             </div>
           </Link>
@@ -174,7 +174,7 @@ export const ArticleCard = ({
         </Link>
         <div className=" md:w-64 w-full">
           <Link href={`/article/${blogId}`}>
-            <div className=" font-bold font-Newsreader text-2xl py-1 cursor-pointer  line-clamp-1 ">
+            <div className=" font-bold  text-2xl md:text-xl py-1 cursor-pointer  line-clamp-1 ">
               {topic}
             </div>
           </Link>

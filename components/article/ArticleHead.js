@@ -14,9 +14,7 @@ function ArticleHead({ image, topic }) {
       />
       <div className=" absolute inset-0 w-full h-full bg-gradient-to-r from-[#9205478a] to-[#da7fad98]">
         <div className=" flex flex-col items-center justify-center ">
-          <div className=" text-white pt-4 font-Newsreader font-black text-4xl">
-            {topic}
-          </div>
+          <div className=" text-white pt-4  font-black text-4xl">{topic}</div>
         </div>
       </div>
     </div>

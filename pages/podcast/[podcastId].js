@@ -126,9 +126,7 @@ function Podcast({ res }) {
           </div>
           <div className="md:w-3/5 w-full md:pl-20 ">
             <div className=" text-lg font-semibold">Podcast</div>
-            <div className=" text-xl font-black pb-2  font-Newsreader">
-              {podcast?.name}
-            </div>
+            <div className=" text-xl font-black pb-2  ">{podcast?.name}</div>
 
             <div className=""></div>
             <div className=" flex"></div>
@@ -163,8 +161,8 @@ function Podcast({ res }) {
             )}
           </div>
         </div>
-        <div className=" mb-20   md:px-20 pt-1 ">
-          <div className=" flex flex-wrap ">
+        <div className=" mb-24   md:px-20 pt-1 ">
+          <div className=" flex  flex-wrap-reverse ">
             <div className=" w-full md:w-1/2 ">
               <Comments />
             </div>

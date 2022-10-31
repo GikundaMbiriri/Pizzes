@@ -15,7 +15,7 @@ function Heading() {
         best version of themselves.
       </div>
       <div className="w-11/12 mt-4">
-        <div className=" md:flex  space-x-4 px-4 ">
+        <div className=" md:flex  md:space-x-4 px-4 ">
           <div className="">
             <div className="flex items-center">
               <div className=" pr-2">

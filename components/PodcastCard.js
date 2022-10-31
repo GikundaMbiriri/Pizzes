@@ -47,7 +47,7 @@ function PodcastCard({ podcast }) {
             <div className="pl-2 text-xs">15:03</div>
           </div>
         </div>
-        <div className="text-xl line-clamp-1 font-semibold  font-Newsreader p-0.5 text-center">
+        <div className="text-xl line-clamp-1 font-semibold   p-0.5 text-center">
           {name}
         </div>
 

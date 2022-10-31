@@ -17,7 +17,7 @@ function About() {
           description: "This is a pizzes blog and podcast creation.",
           images: [
             {
-              url:"./home2.jpeg",
+              url: "./home2.jpeg",
               width: 800,
               height: 600,
               alt: "Pizzes",
@@ -34,7 +34,7 @@ function About() {
       />
       <Head>About Pizzes</Head>
       <div className=" w-11/12  mx-auto pb-20">
-        <div className=" pt-4 font-black text-xl text-pizzes-pink font-Newsreader">
+        <div className=" pt-4 font-black text-xl text-pizzes-pink ">
           ABOUT PIZZES
         </div>
         <div className=" italic py-5">Re-define. Renew. Transform</div>

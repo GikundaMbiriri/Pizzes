@@ -64,19 +64,18 @@ function Article({ res }) {
         <div className=" w-screen">
           <ArticleHead image={article?.image[0]} topic={article?.topic} />
           <ArticleBody data={article} />
-          <div className="w-full px-10 md:grid md:grid-cols-3 md:grid-flow-row">
-            <div className=" md:col-span-2">
+          <div className="w-full md:px-10  flex flex-wrap-reverse md:grid md:grid-cols-3 md:grid-flow-row">
+            <div className=" w-full md:col-span-2">
               <Comments comments={comments} />
             </div>
 
-            <div className=" md:col-span-1 ">
+            <div className=" w-full md:col-span-1 ">
               <CommentsForm id={blogId} />
             </div>
           </div>
         </div>
       </div>
       <div></div>
-      <MusicPlayer />
     </>
   );
 }
