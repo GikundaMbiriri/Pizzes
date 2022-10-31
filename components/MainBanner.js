@@ -10,28 +10,28 @@ function MainBanner() {
     <div className=" w-full h-full relative shadow-lg">
       <div className="absolute top-0 w-full h-full ">
         <Image
-          className="  object-cover  animate-[fade_ease-in-out_8s_infinite_0s] "
+          className="  object-cover  animate-[fade_ease-in-out_16s_infinite_0s] "
           src={reEdit1}
           layout="fill"
         />
       </div>
       <div className="absolute top-0 w-full h-full ">
         <Image
-          className=" object-cover animate-[fade_ease-in-out_8s_infinite_-4s]"
+          className=" object-cover animate-[fade_ease-in-out_16s_infinite_-8s]"
           src={latest1}
           layout="fill"
         />
       </div>
       <div className="absolute top-0 w-full h-full ">
         <Image
-          className=" object-cover animate-[fade_ease-in-out_8s_infinite_-6s]"
+          className=" object-cover animate-[fade_ease-in-out_16s_infinite_-12s]"
           src={latest2}
           layout="fill"
         />
       </div>
       <div className="absolute top-0 w-full h-full ">
         <Image
-          className=" object-cover  animate-[fade_ease-in-out_8s_infinite_-2s]"
+          className=" object-cover  animate-[fade_ease-in-out_16s_infinite_-4s]"
           src={reEdit2}
           layout="fill"
         />
